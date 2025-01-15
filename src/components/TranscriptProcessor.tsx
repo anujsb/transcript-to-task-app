@@ -1,30 +1,36 @@
-"use client"
-import { useState } from 'react';
-import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
+"use client";
+import { useState } from "react";
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 
 const TranscriptProcessor = () => {
-  const [transcript, setTranscript] = useState('');
-  const [boardId, setBoardId] = useState('');
+  const [transcript, setTranscript] = useState("");
+  const [boardId, setBoardId] = useState("");
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState(null);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
+    setResult(null);
 
     try {
-      const response = await fetch('/api/process-transcript', {
-        method: 'POST',
+      const response = await fetch("/api/process-transcript", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({ transcript, boardId }),
       });
 
+      if (!response.ok) {
+        throw new Error(`Error: ${response.statusText}`);
+      }
+
       const data = await response.json();
       setResult(data);
     } catch (error) {
-      console.error('Error:', error);
+      console.error("Error:", error);
+      setResult({ error: "Failed to process transcript. Please try again later." });
     } finally {
       setLoading(false);
     }
@@ -65,16 +71,24 @@ const TranscriptProcessor = () => {
             disabled={loading}
             className="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600 disabled:bg-gray-400"
           >
-            {loading ? 'Processing...' : 'Create Tasks'}
+            {loading ? "Processing..." : "Create Tasks"}
           </button>
         </form>
 
         {result && (
           <div className="mt-4">
-            <h3 className="font-medium">Created Tasks:</h3>
-            <pre className="mt-2 p-4 bg-gray-100 rounded overflow-auto">
-              {JSON.stringify(result, null, 2)}
-            </pre>
+            {result.error ? (
+              <div className="text-red-600">
+                <strong>Error:</strong> {result.error}
+              </div>
+            ) : (
+              <div>
+                <h3 className="font-medium">Created Tasks:</h3>
+                <pre className="mt-2 p-4 bg-gray-100 rounded overflow-auto">
+                  {JSON.stringify(result, null, 2)}
+                </pre>
+              </div>
+            )}
           </div>
         )}
       </CardContent>
