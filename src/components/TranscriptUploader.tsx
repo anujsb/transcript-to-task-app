@@ -1,13 +1,25 @@
 import { useState } from 'react';
 import { Upload } from 'lucide-react';
 
+interface Task {
+  title: string;
+  description: string;
+  assignee?: string;
+  dueDate?: string;
+}
+
+interface ProcessTranscriptResponse {
+  success: boolean;
+  tasks: Task[];
+}
+
 const TranscriptUploader = () => {
   const [loading, setLoading] = useState(false);
-  const [tasks, setTasks] = useState([]);
+  const [tasks, setTasks] = useState<Task[]>([]);
   const [boardId, setBoardId] = useState('');
 
-  const handleTranscriptUpload = async (event) => {
-    const file = event.target.files[0];
+  const handleTranscriptUpload = async (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
     if (!file || !boardId) return;
 
     setLoading(true);
@@ -24,7 +36,7 @@ const TranscriptUploader = () => {
         }),
       });
 
-      const data = await response.json();
+      const data: ProcessTranscriptResponse = await response.json();
       if (data.success) {
         setTasks(data.tasks);
       }
