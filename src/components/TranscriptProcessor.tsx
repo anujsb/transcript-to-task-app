@@ -93,20 +93,18 @@ export default function TranscriptProcessor() {
               {error}
             </div>
           )}
+          <Button type="submit" className="w-full" disabled={loading}>
+            {loading ? (
+              <>
+                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                Processing
+              </>
+            ) : (
+              'Extract Tasks'
+            )}
+          </Button>
         </form>
       </CardContent>
-      <CardFooter>
-        <Button className="w-full" disabled={loading} onClick={() => handleSubmit}>
-          {loading ? (
-            <>
-              <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-              Processing
-            </>
-          ) : (
-            'Extract Tasks'
-          )}
-        </Button>
-      </CardFooter>
       {tasks.length > 0 && (
         <CardContent className="mt-6 border-t pt-6">
           <h3 className="text-lg font-semibold mb-4">Extracted Tasks:</h3>
@@ -130,4 +128,3 @@ export default function TranscriptProcessor() {
     </Card>
   )
 }
-
