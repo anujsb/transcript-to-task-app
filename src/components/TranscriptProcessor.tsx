@@ -90,6 +90,7 @@ export default function TranscriptProcessor() {
               value={boardId}
               onChange={(e) => setBoardId(e.target.value)}
               placeholder="Enter your board ID"
+              className="text-white"
               
             />
           </div>
@@ -107,7 +108,7 @@ export default function TranscriptProcessor() {
                   value={prompt}
                   onChange={(e) => setPrompt(e.target.value)}
                   placeholder="Summarize your meeting here..."
-                  className="h-32"
+                  className="h-32 text-white"
                 />
               </div>
             </TabsContent>
@@ -134,8 +135,8 @@ export default function TranscriptProcessor() {
         </form>
       </CardContent>
       {tasks.length > 0 && (
-        <CardContent className="mt-6 border-t pt-6">
-          <h3 className="text-lg font-semibold mb-4">Extracted Tasks:</h3>
+        <CardContent className="mt-6 border-t pt-6 ">
+          <h3 className="text-lg font-semibold mb-4 text-white">Extracted Tasks:</h3>
           <div className="space-y-4">
             {tasks.map((task, index) => (
               <Card key={index}>
@@ -146,9 +147,9 @@ export default function TranscriptProcessor() {
                   )}
                 </CardHeader>
                 <CardContent>
-                  <p>{task.description}</p>
+                  <p className="text-white">{task.description}</p>
                   {task.dueDate && (
-                    <p className="text-sm text-muted-foreground mt-2">
+                    <p className="text-sm text-muted-foreground mt-2 ">
                       Due: {task.dueDate}
                     </p>
                   )}

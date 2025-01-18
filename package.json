@@ -14,9 +14,11 @@
     "@google/generative-ai": "^0.21.0",
     "@mondaycom/apps-sdk": "^3.1.0",
     "@radix-ui/react-label": "^2.1.1",
+    "@radix-ui/react-select": "^2.1.4",
     "@radix-ui/react-slot": "^1.1.1",
     "@radix-ui/react-tabs": "^1.1.2",
     "@tabler/icons-react": "^3.28.1",
+    "@types/pdf-parse": "^1.1.1",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "dotenv": "^16.4.7",
@@ -35,8 +37,7 @@
     "react-dom": "^19.0.0",
     "react-dropzone": "^14.3.5",
     "tailwind-merge": "^2.6.0",
-    "tailwindcss-animate": "^1.0.7",
-    "@types/pdf-parse": "^1.1.1"
+    "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
     "@types/monday-sdk-js": "^0.2.1",
