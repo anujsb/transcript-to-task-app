@@ -22,13 +22,13 @@ export const Hero: React.FC = () => {
             forms effortlessly—collect insights and engage with your audience
             like never before.
           </p>
-          <div className="my-6 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link className="z-50 mt-10 pointer-events-auto" href="#TranscriptProcessor">
+          {/* <div className="my-6 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Link className="z-50 mt-10 pointer-events-auto" href="/#TranscriptProcessor">
               <Button className="text-lg bg-accent shadow-md">
                 Try it now
               </Button>
             </Link>
-          </div>
+          </div> */}
         </div>
         <div
           id="about"
