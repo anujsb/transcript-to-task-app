@@ -24,7 +24,6 @@
     "googleapis": "^144.0.0",
     "graphql-request": "^7.1.2",
     "lucide-react": "^0.471.1",
-    "mammoth": "^1.9.0",
     "monday-sdk-js": "^0.5.6",
     "next": "15.1.4",
     "next-auth": "^4.24.11",
@@ -37,8 +36,7 @@
     "react-dropzone": "^14.3.5",
     "tailwind-merge": "^2.6.0",
     "tailwindcss-animate": "^1.0.7",
-    "@types/pdf-parse": "^1.1.1",
-    "@types/mammoth": "^1.4.1"
+    "@types/pdf-parse": "^1.1.1"
   },
   "devDependencies": {
     "@types/monday-sdk-js": "^0.2.1",
