@@ -15,12 +15,10 @@ export const Hero: React.FC = () => {
       <div className="relative z-50 px-4 md:px-8 lg:px-16 text-center pointer-events-none select-none mt-10">
         <div className="flex flex-col justify-center items-center mx-10 max-w-5xl">
           <h1 className="text-3xl font-medium sm:text-3xl md:text-5xl lg:text-7xl text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-100 to-neutral-400 mt-16 md:mt-20 lg:mt-28 pointer-events-none">
-            Build Forms in Minutes with AI
+          Generate Monday.com Tasks in Minutes with AI
           </h1>
           <p className="text-text text-sm sm:text-base md:text-lg lg:text-xl my-4 lg:my-6 text-neutral-400 max-w-xl text-center">
-            Harness the power of AI to create personalized feedback and contact
-            forms effortlessly—collect insights and engage with your audience
-            like never before.
+          Transform meeting notes into actionable tasks effortlessly. Let AI organize your workflows faster than ever.
           </p>
           {/* <div className="my-6 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link className="z-50 mt-10 pointer-events-auto" href="/#TranscriptProcessor">
